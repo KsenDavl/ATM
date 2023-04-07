@@ -1,4 +1,4 @@
-package davlks.atm;
+package davlks.atm.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

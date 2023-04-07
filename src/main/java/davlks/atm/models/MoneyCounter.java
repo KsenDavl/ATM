@@ -1,9 +1,9 @@
-package davlks.atm;
+package davlks.atm.models;
 
 import lombok.Getter;
 
 @Getter
-public class MoneyManipulator {
+public class MoneyCounter {
 
     private int fiftyRubNotes;
     private int hundredRubNotes;
@@ -11,7 +11,7 @@ public class MoneyManipulator {
     private int thousandRubNotes;
     private int fiveThousandRubNotes;
 
-    public MoneyManipulator(int fiftyRubNotes, int hundredRubNotes, int fiveHundredRubNotes, int thousandRubNotes, int fiveThousandRubNotes) {
+    public MoneyCounter(int fiftyRubNotes, int hundredRubNotes, int fiveHundredRubNotes, int thousandRubNotes, int fiveThousandRubNotes) {
         this.fiftyRubNotes = fiftyRubNotes;
         this.hundredRubNotes = hundredRubNotes;
         this.fiveHundredRubNotes = fiveHundredRubNotes;
@@ -30,16 +30,16 @@ public class MoneyManipulator {
 
     public void addMoney(NotesCounter notesCounter) {
         this.fiftyRubNotes = this.fiftyRubNotes + notesCounter.getFiftyRubNotes();
-        this.hundredRubNotes = this.hundredRubNotes + getHundredRubNotes();
-        this.fiveHundredRubNotes = this.fiveThousandRubNotes + notesCounter.getFiveHundredRubNotes();
+        this.hundredRubNotes = this.hundredRubNotes + notesCounter.getHundredRubNotes();
+        this.fiveHundredRubNotes = this.fiveHundredRubNotes + notesCounter.getFiveHundredRubNotes();
         this.thousandRubNotes = this.thousandRubNotes + notesCounter.getThousandRubNotes();
         this.fiveThousandRubNotes = this.fiveThousandRubNotes + notesCounter.getFiveThousandRubNotes();
     }
 
     public void withdrawMoney(NotesCounter notesCounter) {
         this.fiftyRubNotes = this.fiftyRubNotes - notesCounter.getFiftyRubNotes();
-        this.hundredRubNotes = this.hundredRubNotes - getHundredRubNotes();
-        this.fiveHundredRubNotes = this.fiveThousandRubNotes - notesCounter.getFiveHundredRubNotes();
+        this.hundredRubNotes = this.hundredRubNotes - notesCounter.getHundredRubNotes();
+        this.fiveHundredRubNotes = this.fiveHundredRubNotes - notesCounter.getFiveHundredRubNotes();
         this.thousandRubNotes = this.thousandRubNotes - notesCounter.getThousandRubNotes();
         this.fiveThousandRubNotes = this.fiveThousandRubNotes - notesCounter.getFiveThousandRubNotes();
     }
